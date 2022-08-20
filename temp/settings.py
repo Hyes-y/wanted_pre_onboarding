@@ -33,8 +33,9 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
+CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
 
@@ -45,6 +46,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Add apps
+    'api.apps.ApiConfig',
+    # Use Django rest framework
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
