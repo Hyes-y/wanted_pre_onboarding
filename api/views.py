@@ -1,12 +1,23 @@
-from .models import Post, Company, User, Apply
-from .serializer import PostSerializer
-
 # django rest api
 from rest_framework import viewsets
-from rest_framework.response import Response
+
+# local modules
+from .models import Post
+from .serializer import PostSerializer, PostDetailSerializer, PostCreateSerializer
 
 
 class PostViewSet(viewsets.ModelViewSet):
-    # ModelViewSet의 경우 커스텀이 까다로울듯 -> 일반 ViewSet이나 generic 이용
+    """
+    채용 공고 관련 API
+    """
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+    def get_serializer_class(self):
+        if self.action == "create":
+            return PostCreateSerializer
+        if self.action == "list":
+            return PostSerializer
+
+        return PostDetailSerializer
+

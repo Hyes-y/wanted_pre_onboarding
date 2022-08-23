@@ -30,7 +30,7 @@ class Post(models.Model):
     skill = models.CharField('사용기술', max_length=30)
     description = models.TextField('채용내용')
 
-    c_id = models.ForeignKey(Company, on_delete=models.CASCADE, db_column="c_id")
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, db_column="c_id", related_name='company')
 
 
 class Apply(models.Model):

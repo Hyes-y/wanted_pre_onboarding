@@ -5,7 +5,7 @@ from . import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register('post', views.PostViewSet)
+router.register(r'posts', views.PostViewSet, basename='post')
 
 app_name = 'api'
 urlpatterns = [
