@@ -12,7 +12,7 @@
 | 채용 공고 삭제 | ✅ |
 | 채용 공고 리스트 조회 | ✅ |
 | 채용 공고 상세 내용 조회 | ✅ |
-| (Optional) 채용 공고 검색 | |
+| (Optional) 채용 공고 검색 | ✅ |
 | (Optional) 채용 공고 상세 내용 조회시 해당 기업의 다른 공고 목록도 포함 | ✅ |
 | (Optional) 채용 공고 지원 | |
 
@@ -144,3 +144,17 @@ ex>
 <br>
 
 ---
+
+<br>
+
+### 7. (Optional) 채용 공고 검색
+- 채용포지션('position'), 사용기술('skill'), 채용내용('description') 에 대해 해당 키워드가 있는지 검색한 결과를 조회
+- 요청 URL : `GET: {HOST}/api/posts?search={params}`
+
+![image](https://user-images.githubusercontent.com/55697800/186370273-0daa93ec-7d06-43a7-b4e0-1e251b0db287.png)
+
+<br>
+
+---
+
+<br>
