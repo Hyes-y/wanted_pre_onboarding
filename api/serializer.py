@@ -40,15 +40,23 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = ('id', 'uid', 'position', 'reward', 'skill',
-                  'company_name', 'company_country', 'company_location')
+                  'company_name', 'company_country', 'company_location'
+                  )
         read_only_fields = ['uid']
 
 
 class PostDetailSerializer(PostSerializer):
+    related = serializers.SerializerMethodField()
+
+    def get_related(self, obj):
+        return Post.objects.filter(company=obj.company).exclude(id=obj.id).values_list('id', 'uid')
+
     class Meta:
         model = Post
         fields = ('id', 'uid', 'position', 'reward', 'skill', 'description',
-                  'company_name', 'company_country', 'company_location')
+                  'company_name', 'company_country', 'company_location',
+                  'related'
+                  )
         read_only_fields = ['id', 'uid']
 
 

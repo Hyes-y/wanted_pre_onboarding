@@ -10,7 +10,7 @@ class PostViewSet(viewsets.ModelViewSet):
     """
     채용 공고 관련 API
     """
-    queryset = Post.objects.all()
+    queryset = Post.objects.select_related('company').all()
     serializer_class = PostSerializer
 
     def get_serializer_class(self):
