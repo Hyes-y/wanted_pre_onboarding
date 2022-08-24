@@ -13,7 +13,7 @@
 | 채용 공고 리스트 조회 | ✅ |
 | 채용 공고 상세 내용 조회 | ✅ |
 | (Optional) 채용 공고 검색 | |
-| (Optional) 채용 공고 상세 내용 조회시 해당 기업의 다른 공고 목록도 포함 | |
+| (Optional) 채용 공고 상세 내용 조회시 해당 기업의 다른 공고 목록도 포함 | ✅ |
 | (Optional) 채용 공고 지원 | |
 
 <br>
@@ -50,6 +50,7 @@
     "company_location": "서울특별시 강남구"
 }
 ```
+
 <br>
 
 ---
@@ -63,6 +64,8 @@ ex>
 ![image](https://user-images.githubusercontent.com/55697800/186227525-67417c96-883c-4e4e-8469-d8bb50ea26ee.png)
 
 ---
+
+<br>
 
 ### 2. 채용 공고 수정
 - 채용 포지션, 채용 보상금, 사용 기술, 채용 내용 중 수정할 부분을 입력받아 채용 공고 수정
@@ -82,6 +85,8 @@ ex>
 
 ---
 
+<br>
+
 ### 3. 채용 공고 삭제
 - 요청 URL의 pk에 해당하는 공고를 삭제
 - 요청 URL : `DELETE: {HOST}/api/posts/<int:pk>`
@@ -92,6 +97,7 @@ ex>
 
 ---
 
+<br>
 
 ### 4. 채용 공고 리스트 조회
 - 전체 채용 공고 리스트 조회
@@ -104,6 +110,7 @@ ex>
 
 ---
 
+<br>
 
 ### 5. 채용 공고 상세 내용 조회
 - 요청 URL의 pk에 해당하는 채용 공고의 상세 내용 조회(채용 내용이 추가적으로 표시됨)
@@ -112,3 +119,28 @@ ex>
 ex>
 
 ![image](https://user-images.githubusercontent.com/55697800/186229960-157ec107-2de3-4325-b579-3446ced3e682.png)
+
+
+
+<br>
+
+---
+
+### 6. (Optional) 채용 공고 상세 내용 조회시 해당 기업의 다른 공고 목록도 포함
+- 채용 공고 상세 내용 조회시 기업의 다른 공고의 [id, uid] 를 함께 표시
+- 요청 URL : `GET: {HOST}/api/posts/<int:pk>`
+
+- 현재 3개의 채용 공고중 1개만 다른 기업인 상태
+
+![image](https://user-images.githubusercontent.com/55697800/186366889-8cc8686b-e050-41f3-971b-a937f67d875e.png)
+
+- 1번 공고와 4번 공고의 기업이 같음
+
+![image](https://user-images.githubusercontent.com/55697800/186367031-60c57083-c7f3-4b0e-9c81-f75b34bec0bd.png)
+
+
+
+
+<br>
+
+---
